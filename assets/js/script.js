@@ -1,33 +1,21 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Dark mode toggle setup
-  const toggle = document.getElementById("theme-toggle");
+// Theme toggle
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  const html = document.documentElement;
+  const currentTheme = html.getAttribute('data-theme');
+  html.setAttribute('data-theme', currentTheme === 'light' ? 'dark' : 'light');
+});
 
-  // Apply saved theme on load
-  const savedTheme = localStorage.getItem("theme") || "light";
-  document.documentElement.setAttribute("data-theme", savedTheme);
+// Portfolio toggle
+document.querySelectorAll('.toggle-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const target = button.getAttribute('data-target');
 
-  // If toggle is a checkbox, update its checked state (ignore if button)
-  if (toggle && "checked" in toggle) toggle.checked = savedTheme === "dark";
+    document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
 
-  // Toggle theme on click
-  if (toggle) {
-    toggle.addEventListener("click", () => {
-      const currentTheme = document.documentElement.getAttribute("data-theme");
-      const newTheme = currentTheme === "dark" ? "light" : "dark";
-      document.documentElement.setAttribute("data-theme", newTheme);
-      localStorage.setItem("theme", newTheme);
-
-      // Update checked state if toggle is checkbox
-      if ("checked" in toggle) toggle.checked = newTheme === "dark";
+    document.querySelectorAll('.portfolio-section').forEach(section => {
+      section.classList.remove('active');
     });
-  }
-
-  // Initialize GLightbox if available
-  if (typeof GLightbox === "function") {
-    GLightbox({
-      selector: ".glightbox",
-      loop: true,
-      touchNavigation: true,
-    });
-  }
+    document.getElementById(target).classList.add('active');
+  });
 });
