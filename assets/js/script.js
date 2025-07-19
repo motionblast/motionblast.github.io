@@ -1,21 +1,54 @@
-// Theme toggle
-document.getElementById('theme-toggle').addEventListener('click', () => {
-  const html = document.documentElement;
-  const currentTheme = html.getAttribute('data-theme');
-  html.setAttribute('data-theme', currentTheme === 'light' ? 'dark' : 'light');
-});
+document.addEventListener("DOMContentLoaded", () => {
+  // Dark mode toggle setup
+  const toggle = document.getElementById("theme-toggle");
 
-// Portfolio toggle
-document.querySelectorAll('.toggle-btn').forEach(button => {
-  button.addEventListener('click', () => {
-    const target = button.getAttribute('data-target');
+  // Apply saved theme on load
+  const savedTheme = localStorage.getItem("theme") || "light";
+  document.documentElement.setAttribute("data-theme", savedTheme);
+  if (toggle) toggle.checked = savedTheme === "dark";
 
-    document.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-
-    document.querySelectorAll('.portfolio-section').forEach(section => {
-      section.classList.remove('active');
+  // Toggle theme on button click
+  if (toggle) {
+    toggle.addEventListener("click", () => {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
     });
-    document.getElementById(target).classList.add('active');
-  });
+  }
+
+  // Initialize GLightbox if available
+  if (typeof GLightbox === "function") {
+    const lightbox = GLightbox({
+      selector: ".glightbox",
+    });
+  }
+
+  // Portfolio photo/video toggle
+  const showPhotosBtn = document.getElementById("showPhotos");
+  const showVideosBtn = document.getElementById("showVideos");
+  const photoGallery = document.getElementById("photoGallery");
+  const videoGallery = document.getElementById("videoGallery");
+
+  if (showPhotosBtn && showVideosBtn && photoGallery && videoGallery) {
+    showPhotosBtn.addEventListener("click", () => {
+      photoGallery.style.display = "flex";
+      videoGallery.style.display = "none";
+      showPhotosBtn.classList.add("active");
+      showVideosBtn.classList.remove("active");
+    });
+
+    showVideosBtn.addEventListener("click", () => {
+      photoGallery.style.display = "none";
+      videoGallery.style.display = "flex";
+      showVideosBtn.classList.add("active");
+      showPhotosBtn.classList.remove("active");
+    });
+  }
+
+  // Dynamic copyright year update
+  const yearElem = document.getElementById("currentYear");
+  if (yearElem) {
+    yearElem.textContent = new Date().getFullYear();
+  }
 });
