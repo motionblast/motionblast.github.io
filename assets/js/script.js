@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Portfolio photo/video toggle
+  // Toggle photo/video galleries
   const showPhotosBtn = document.getElementById("showPhotos");
   const showVideosBtn = document.getElementById("showVideos");
   const photoGallery = document.getElementById("photoGallery");
