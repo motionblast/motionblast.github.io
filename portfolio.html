@@ -26,15 +26,15 @@
         <li><a href="resume.html">Resume</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><button id="theme-toggle">🌓</button></li>
+        <li><button id="theme-toggle" aria-label="Toggle dark/light theme">🌓</button></li>
       </ul>
     </nav>
   </header>
   <main class="content">
     <h2>Portfolio</h2>
-    <div class="toggle-buttons">
-      <button id="showPhotos" class="toggle-btn active">Photos</button>
-      <button id="showVideos" class="toggle-btn">Videos</button>
+    <div class="toggle-buttons" role="group" aria-label="Toggle portfolio view">
+      <button id="showPhotos" class="toggle-btn active" aria-pressed="true" type="button">Photos</button>
+      <button id="showVideos" class="toggle-btn" aria-pressed="false" type="button">Videos</button>
     </div>
     <section id="photoGallery" class="gallery">
       <a href="assets/img/photo1_large.jpg" class="glightbox" data-glightbox="title: Photo 1">
@@ -66,9 +66,7 @@
       <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
       <a href="mailto:your@email.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
     </div>
-    <p class="copyright">&copy; 
-      <span id="currentYear"></span> Michael Matwichuk. All rights reserved.
-    </p>
+    <p class="copyright">&copy; <span id="currentYear"></span> Michael Matwichuk. All rights reserved.</p>
   </footer>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"
