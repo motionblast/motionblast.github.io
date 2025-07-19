@@ -59,6 +59,7 @@ button#theme-toggle {
   color: inherit;
 }
 
+/* Hero section styles */
 .hero {
   text-align: center;
   padding: 4rem 2rem;
@@ -80,6 +81,7 @@ button#theme-toggle {
   margin: auto;
 }
 
+/* Contact form styles */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -104,6 +106,7 @@ button#theme-toggle {
   cursor: pointer;
 }
 
+/* Footer styles */
 .footer-icons {
   text-align: center;
   padding: 1rem 0;
@@ -117,6 +120,7 @@ button#theme-toggle {
   text-decoration: none;
 }
 
+/* Gallery styles */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -144,6 +148,7 @@ button#theme-toggle {
   height: auto;
 }
 
+/* Video gallery styles */
 .video-gallery {
   display: flex;
   flex-wrap: wrap;
@@ -159,18 +164,13 @@ button#theme-toggle {
   height: auto;
 }
 
-button.active {
-  border-bottom: 2px solid var(--primary);
-  font-weight: 700;
-}
-
-/* Additional styles for gallery toggle buttons */
-.gallery-toggle {
+/* Toggle buttons container and buttons */
+.toggle-buttons {
   text-align: center;
   margin-bottom: 1.5rem;
 }
 
-.gallery-toggle button {
+.toggle-buttons button {
   background: none;
   border: 2px solid var(--primary);
   border-radius: 4px;
@@ -183,10 +183,16 @@ button.active {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.gallery-toggle button.active,
-.gallery-toggle button:hover {
+.toggle-buttons button.active,
+.toggle-buttons button:hover {
   background-color: var(--primary);
   color: white;
+}
+
+/* Button active styling */
+button.active {
+  border-bottom: 2px solid var(--primary);
+  font-weight: 700;
 }
 
 footer p {
