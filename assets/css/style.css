@@ -1,3 +1,4 @@
+/* Root variables */
 :root {
   --font-family: 'Poppins', 'Inter', 'Segoe UI', 'Roboto', sans-serif;
   --bg-light: #ffffff;
@@ -8,6 +9,7 @@
   --accent: #a8dadc;
 }
 
+/* Light and dark theme styling */
 [data-theme="light"] {
   background-color: var(--bg-light);
   color: var(--text-light);
@@ -18,12 +20,14 @@
   color: var(--text-dark);
 }
 
+/* Body styling */
 body {
   margin: 0;
   font-family: var(--font-family);
   transition: background-color 0.3s, color 0.3s;
 }
 
+/* Navigation styles */
 nav {
   display: flex;
   justify-content: space-between;
@@ -65,6 +69,7 @@ button#theme-toggle {
   padding: 4rem 2rem;
 }
 
+/* Call to action button styles */
 .cta {
   display: inline-block;
   margin-top: 1rem;
@@ -75,6 +80,7 @@ button#theme-toggle {
   text-decoration: none;
 }
 
+/* Main content area styles */
 .content {
   padding: 2rem;
   max-width: 800px;
@@ -106,7 +112,7 @@ button#theme-toggle {
   cursor: pointer;
 }
 
-/* Footer styles */
+/* Footer icons styles */
 .footer-icons {
   text-align: center;
   padding: 1rem 0;
@@ -120,7 +126,7 @@ button#theme-toggle {
   text-decoration: none;
 }
 
-/* Gallery styles */
+/* Photo gallery styles */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -164,37 +170,52 @@ button#theme-toggle {
   height: auto;
 }
 
-/* Toggle buttons container and buttons */
+/* Toggle buttons container styles */
 .toggle-buttons {
-  text-align: center;
-  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-.toggle-buttons button {
-  background: none;
+/* Toggle buttons styling */
+.toggle-btn {
+  background-color: transparent;
   border: 2px solid var(--primary);
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
-  margin: 0 0.5rem;
-  cursor: pointer;
+  color: var(--primary);
+  padding: 0.5rem 1.25rem;
   font-family: var(--font-family);
   font-weight: 600;
-  color: var(--primary);
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.toggle-buttons button.active,
-.toggle-buttons button:hover {
-  background-color: var(--primary);
-  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  min-width: 100px;
+  text-align: center;
 }
 
 /* Button active styling */
+.toggle-btn.active {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 0 8px var(--primary);
+}
+
+/* Toggle buttons hover and focus styling */
+.toggle-btn:hover,
+.toggle-btn:focus {
+  background-color: var(--primary);
+  color: white;
+  outline: none;
+  box-shadow: 0 0 8px var(--primary);
+}
+
+/* General active button styling */
 button.active {
   border-bottom: 2px solid var(--primary);
   font-weight: 700;
 }
 
+/* Footer text styling */
 footer p {
   text-align: center;
   font-size: 0.9rem;
