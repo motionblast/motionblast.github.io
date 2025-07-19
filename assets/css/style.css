@@ -191,6 +191,19 @@ button#theme-toggle {
   display: block;
 }
 
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+footer .copyright {
+  margin-top: 0.5rem;
+  font-weight: 400;
+  color: var(--text-light);
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
