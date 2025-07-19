@@ -31,8 +31,14 @@
   </header>
 
   <main class="content">
-    <h2>Photo Portfolio</h2>
-    <div class="gallery">
+    <h2>Portfolio</h2>
+
+    <div class="portfolio-toggle">
+      <button id="photoBtn" class="active">Photos</button>
+      <button id="videoBtn">Videos</button>
+    </div>
+
+    <section id="photoGallery" class="gallery">
       <a href="assets/img/photo1_large.jpg" class="glightbox" data-glightbox="title: Photo 1">
         <img src="assets/img/photo1_thumb.jpg" alt="Photo 1" />
       </a>
@@ -42,10 +48,9 @@
       <a href="assets/img/photo3_large.jpg" class="glightbox" data-glightbox="title: Photo 3">
         <img src="assets/img/photo3_thumb.jpg" alt="Photo 3" />
       </a>
-    </div>
+    </section>
 
-    <h2>Video Portfolio</h2>
-    <div class="video-gallery">
+    <section id="videoGallery" class="video-gallery" style="display: none;">
       <video controls width="320" height="180" poster="assets/img/video1_poster.jpg">
         <source src="assets/videos/video1.mp4" type="video/mp4" />
         Your browser does not support the video tag.
@@ -54,7 +59,7 @@
         <source src="assets/videos/video2.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-    </div>
+    </section>
   </main>
 
   <footer>
