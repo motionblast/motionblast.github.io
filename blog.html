@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Blog | Michael Matwichuk</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
   <script src="https://kit.fontawesome.com/a2e0c6a30b.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -33,19 +33,12 @@
       <a href="mailto:your@email.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
     </div>
   </footer>
-  <script>
-    document.getElementById('theme-toggle').onclick = () => {
-      const html = document.documentElement;
-      const current = html.getAttribute('data-theme');
-      html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
-      localStorage.setItem('theme', html.getAttribute('data-theme'));
-    };
-    document.addEventListener('DOMContentLoaded', () => {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-      }
-    });
-  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"
+    integrity="sha512-k9xW0Qp4DflKxUlXz+JQwJPWOTSCynJuE2HauMfFGfWbJ1pTcFxtpXWFFnjAqpPVHjO4X6hU6hjWqKqPL9r2qg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
