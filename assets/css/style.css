@@ -1,11 +1,11 @@
 :root {
+  --font-family: 'Poppins', 'Inter', 'Segoe UI', 'Roboto', sans-serif;
   --bg-light: #ffffff;
   --bg-dark: #121212;
   --text-light: #000000;
   --text-dark: #ffffff;
   --primary: #e63946;
   --accent: #a8dadc;
-  --font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
 }
 
 [data-theme="light"] {
@@ -159,58 +159,39 @@ button#theme-toggle {
   height: auto;
 }
 
-.portfolio-toggle {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
-  gap: 1rem;
+button.active {
+  border-bottom: 2px solid var(--primary);
+  font-weight: 700;
 }
 
-.toggle-btn {
-  padding: 0.5rem 1.25rem;
+/* Additional styles for gallery toggle buttons */
+.gallery-toggle {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.gallery-toggle button {
+  background: none;
   border: 2px solid var(--primary);
-  background-color: transparent;
-  color: var(--primary);
-  font-weight: 600;
-  border-radius: 25px;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  font-family: var(--font-family);
+  font-weight: 600;
+  color: var(--primary);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.toggle-btn.active {
+.gallery-toggle button.active,
+.gallery-toggle button:hover {
   background-color: var(--primary);
   color: white;
 }
 
-.portfolio-section {
-  display: none;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-.portfolio-section.active {
-  display: block;
-}
-
-footer {
+footer p {
   text-align: center;
-  padding: 1rem 0;
   font-size: 0.9rem;
-  color: var(--text-light);
-}
-
-footer .copyright {
+  color: inherit;
   margin-top: 0.5rem;
-  font-weight: 400;
-  color: var(--text-light);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
