@@ -5,7 +5,7 @@
   --text-dark: #ffffff;
   --primary: #e63946;
   --accent: #a8dadc;
-  --font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  --font-family: 'Inter', sans-serif;
 }
 
 [data-theme="light"] {
@@ -18,29 +18,10 @@
   color: var(--text-dark);
 }
 
-[data-theme="dark"] a {
-  color: var(--accent);
-}
-
 body {
   margin: 0;
   font-family: var(--font-family);
   transition: background-color 0.3s, color 0.3s;
-}
-
-a,
-button,
-input,
-textarea {
-  transition: all 0.3s ease;
-}
-
-a:focus,
-button:focus,
-input:focus,
-textarea:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
 }
 
 nav {
@@ -93,10 +74,6 @@ button#theme-toggle {
   text-decoration: none;
 }
 
-.cta:hover {
-  background-color: #d62839;
-}
-
 .content {
   padding: 2rem;
   max-width: 800px;
@@ -125,17 +102,6 @@ button#theme-toggle {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.contact-form button:hover {
-  background-color: #d62839;
-}
-
-[data-theme="dark"] .contact-form input,
-[data-theme="dark"] .contact-form textarea {
-  background-color: #1e1e1e;
-  color: white;
-  border: 1px solid #444;
 }
 
 .footer-icons {
@@ -193,9 +159,45 @@ button#theme-toggle {
   height: auto;
 }
 
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
+.portfolio-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.toggle-btn {
+  padding: 0.5rem 1.25rem;
+  border: 2px solid var(--primary);
+  background-color: transparent;
+  color: var(--primary);
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+  background-color: var(--primary);
+  color: white;
+}
+
+.portfolio-section {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.portfolio-section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
