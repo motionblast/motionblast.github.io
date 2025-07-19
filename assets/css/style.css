@@ -5,7 +5,7 @@
   --text-dark: #ffffff;
   --primary: #e63946;
   --accent: #a8dadc;
-  --font-family: 'Inter', sans-serif;
+  --font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
 }
 
 [data-theme="light"] {
