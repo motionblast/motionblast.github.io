@@ -32,7 +32,7 @@
   </header>
   <main class="content">
     <h2>Portfolio</h2>
-    <div class="toggle-buttons" style="text-align: center; margin-bottom: 2rem;">
+    <div class="toggle-buttons">
       <button id="showPhotos" class="toggle-btn active">Photos</button>
       <button id="showVideos" class="toggle-btn">Videos</button>
     </div>
@@ -77,28 +77,5 @@
     referrerpolicy="no-referrer"
   ></script>
   <script src="assets/js/script.js"></script>
-  <script>
-    // Toggle photo/video galleries
-    document.addEventListener('DOMContentLoaded', () => {
-      const showPhotosBtn = document.getElementById('showPhotos');
-      const showVideosBtn = document.getElementById('showVideos');
-      const photoGallery = document.getElementById('photoGallery');
-      const videoGallery = document.getElementById('videoGallery');
-
-      showPhotosBtn.addEventListener('click', () => {
-        photoGallery.style.display = 'flex';
-        videoGallery.style.display = 'none';
-        showPhotosBtn.classList.add('active');
-        showVideosBtn.classList.remove('active');
-      });
-
-      showVideosBtn.addEventListener('click', () => {
-        photoGallery.style.display = 'none';
-        videoGallery.style.display = 'flex';
-        showVideosBtn.classList.add('active');
-        showPhotosBtn.classList.remove('active');
-      });
-    });
-  </script>
 </body>
 </html>
