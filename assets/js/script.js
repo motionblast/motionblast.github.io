@@ -5,11 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateThemeIcon(theme) {
     if (theme === "dark") {
-      // Moon icon
-      themeIcon.innerHTML = `<path d="M21 12.79A9 9 0 0112.21 3a7 7 0 108.79 8.79z"/>`;
-      themeToggle.setAttribute("aria-pressed", "true");
-    } else {
-      // Sun icon
+      // Currently dark → show Sun icon to indicate switch to light mode
       themeIcon.innerHTML = `
         <circle cx="12" cy="12" r="5"/>
         <line x1="12" y1="1" x2="12" y2="3"/>
@@ -20,6 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
         <line x1="21" y1="12" x2="23" y2="12"/>
         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      `;
+      themeToggle.setAttribute("aria-pressed", "true");
+    } else {
+      // Currently light → show Moon icon to indicate switch to dark mode
+      themeIcon.innerHTML = `
+        <path d="M21 12.79A9 9 0 0112.21 3a7 7 0 108.79 8.79z"/>
       `;
       themeToggle.setAttribute("aria-pressed", "false");
     }
