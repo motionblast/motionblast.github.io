@@ -5,49 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | Michael Matwichuk</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inter:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
   <script src="https://kit.fontawesome.com/a2e0c6a30b.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
     <nav>
       <h1>Michael Matwichuk</h1>
-      <ul>
+      <button id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+      <ul id="nav-menu" class="nav-menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" class="active">About</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="resume.html">Resume</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><button id="theme-toggle">🌓</button></li>
+        <li>
+          <button id="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
+            <svg id="theme-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </button>
+        </li>
       </ul>
     </nav>
   </header>
+
   <main class="content">
     <h2>About Me</h2>
     <p>
-      Hello! I’m Michael Matwichuk, a passionate photo and video professional with a keen eye for storytelling and a dedication to capturing moments that matter.
+      Hello! I'm Michael Matwichuk, a photo and video creative based in [Your Location].
+      I specialize in capturing compelling visuals that tell a story. With a background
+      in cinematography and photography, I blend cinematic techniques with a clean, modern aesthetic.
     </p>
     <p>
-      [Placeholder text] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
-    </p>
-    <p>
-      [Placeholder text] Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi.
-    </p>
-    <p>
-      I’m excited to share my work with you and collaborate on creative projects that inspire.
+      When I'm not behind the camera, I enjoy exploring new places, listening to vinyl records,
+      and working on personal passion projects. Feel free to check out my <a href="portfolio.html">portfolio</a>,
+      learn more <a href="resume.html">about my experience</a>, or <a href="contact.html">get in touch</a>.
     </p>
   </main>
+
   <footer>
     <div class="footer-icons">
       <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
       <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
       <a href="mailto:your@email.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
     </div>
-    <p class="copyright">&copy; 
-      <span id="currentYear"></span> Michael Matwichuk. All rights reserved.
-    </p>
+    <p>&copy; <span id="currentYear"></span> Michael Matwichuk. All rights reserved.</p>
   </footer>
+
   <script src="assets/js/script.js"></script>
 </body>
 </html>
